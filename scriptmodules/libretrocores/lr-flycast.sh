@@ -72,20 +72,11 @@ function install_lr-flycast() {
 }
 
 function configure_lr-flycast() {
-    local sys
-    local systems=(dreamcast arcade)
-    local def
-    for sys in "${systems[@]}"; do
-        def=0
-        if isPlatform "kms" && [[ "$sys" == "dreamcast" ]]; then
-            def=1
-        fi
-        # segfaults on the rpi without redirecting stdin from </dev/null
-        addEmulator $def "$md_id" "$sys" "$md_inst/flycast_libretro.so </dev/null"
-        addSystem "$sys"
-    done
-
-    [[ "$md_mode" == "remove" ]] && return
+    local system
+    for system in dreamcast dreamcast-indies dreamcast-japan naomi atomiswave; do
+    mkRomDir "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/flycast_libretro.so"
+    addSystem "$system"
 
     local params=()
     # system-specific
@@ -93,9 +84,7 @@ function configure_lr-flycast() {
         params+=("video_shared_context" "true")
     fi
 
-    for sys in "${systems[@]}"; do
-        mkRomDir "$sys"
-        defaultRAConfig "$sys" "${params[@]}"
+    defaultRAConfig "$system" "${params[@]}"
     done
 
     mkUserDir "$biosdir/dc"
