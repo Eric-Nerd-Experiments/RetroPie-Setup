@@ -36,15 +36,27 @@ function install_lr-atari800() {
 function configure_lr-atari800() {
     mkRomDir "atari800"
     mkRomDir "atari5200"
+    mkRomDir "atari5200h"
+    mkRomDir "atari5200-proto"
+    mkRomDir "atari5200-unl"
 
     defaultRAConfig "atari800"
     defaultRAConfig "atari5200"
+    defaultRAConfig "atari5200h"
+    defaultRAConfig "atari5200-proto"
+    defaultRAConfig "atari5200-unl"
 
     mkUserDir "$md_conf_root/atari800"
     moveConfigFile "$home/.lr-atari800.cfg" "$md_conf_root/atari800/lr-atari800.cfg"
 
     addEmulator 1 "lr-atari800" "atari800" "$md_inst/atari800_libretro.so"
     addEmulator 1 "lr-atari800" "atari5200" "$md_inst/atari800_libretro.so"
+    addEmulator 1 "lr-atari800" "atari5200h" "$md_inst/atari800_libretro.so"
+    addEmulator 1 "lr-atari800" "atari5200-proto" "$md_inst/atari800_libretro.so"
+    addEmulator 1 "lr-atari800" "atari5200-unl" "$md_inst/atari800_libretro.so"
     addSystem "atari800"
     addSystem "atari5200"
+    addSystem "atari5200h"
+    addSystem "atari5200-proto"
+    addSystem "atari5200-unl"
 }
