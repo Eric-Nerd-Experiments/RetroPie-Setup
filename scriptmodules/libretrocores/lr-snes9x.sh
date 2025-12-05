@@ -39,11 +39,10 @@ function install_lr-snes9x() {
 }
 
 function configure_lr-snes9x() {
-    mkRomDir "snes"
-    defaultRAConfig "snes"
-
-    local def=0
-    ! isPlatform "armv6" && ! isPlatform "armv7" && def=1
-    addEmulator $def "$md_id" "snes" "$md_inst/snes9x_libretro.so"
-    addSystem "snes"
+   local system
+    for system in satellaview sfc sfc-t snes snesh snesmsu1 snes-proto snes-unl sufami; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/snes9x_libretro.so"
+    addSystem "$system"
 }
