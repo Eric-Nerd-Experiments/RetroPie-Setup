@@ -37,13 +37,10 @@ function install_lr-nestopia() {
 }
 
 function configure_lr-nestopia() {
-    mkRomDir "nes"
-    mkRomDir "fds"
-    defaultRAConfig "nes"
-    defaultRAConfig "fds"
-
-    addEmulator 0 "$md_id" "nes" "$md_inst/nestopia_libretro.so"
-    addEmulator 1 "$md_id" "fds" "$md_inst/nestopia_libretro.so"
-    addSystem "nes"
-    addSystem "fds"
+  local system
+  for system in dendy famicom nes nesh nesht nes-proto nes-unl fds; do
+  mkRomDir "$system"
+  defaultRAConfig "$system"
+  addEmulator 1 "$md_id" "$system" "$md_inst/nestopia_libretro.so"
+  addSystem "$system"
 }
