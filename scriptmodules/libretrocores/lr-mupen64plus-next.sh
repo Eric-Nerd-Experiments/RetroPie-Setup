@@ -81,19 +81,10 @@ function install_lr-mupen64plus-next() {
 }
 
 function configure_lr-mupen64plus-next() {
-    mkRomDir "n64"
-    defaultRAConfig "n64"
-
-    if isPlatform "rpi"; then
-        # Disable hybrid upscaling filter (needs better GPU)
-        setRetroArchCoreOption "mupen64plus-next-HybridFilter" "False"
-        # Disable overscan/VI emulation (slight performance drain)
-        setRetroArchCoreOption "mupen64plus-next-EnableOverscan" "Disabled"
-        # Enable Threaded GL calls
-        setRetroArchCoreOption "mupen64plus-next-ThreadedRenderer" "True"
-    fi
-    setRetroArchCoreOption "mupen64plus-next-EnableNativeResFactor" "1"
-
-    addEmulator 1 "$md_id" "n64" "$md_inst/mupen64plus_next_libretro.so"
-    addSystem "n64"
+   local system
+    for system in n64 n64-dd n64-japan n64-proto n64-unl; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/mupen64plus_next_libretro.so"
+    addSystem "$system"
 }
