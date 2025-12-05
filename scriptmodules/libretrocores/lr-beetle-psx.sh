@@ -41,9 +41,10 @@ function install_lr-beetle-psx() {
 }
 
 function configure_lr-beetle-psx() {
-    mkRomDir "psx"
-    defaultRAConfig "psx"
-
-    addEmulator 0 "$md_id" "psx" "$md_inst/mednafen_psx_hw_libretro.so"
-    addSystem "psx"
+    local system
+    for system in psx psx-japan; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/mednafen_psx_hw_libretro.so"
+    addSystem "$system"
 }
