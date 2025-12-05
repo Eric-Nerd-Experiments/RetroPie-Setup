@@ -39,9 +39,10 @@ function install_lr-bsnes() {
 }
 
 function configure_lr-bsnes() {
-    mkRomDir "snes"
-    defaultRAConfig "snes"
-
-    addEmulator 1 "$md_id" "snes" "$md_inst/bsnes_libretro.so"
-    addSystem "snes"
+    local system
+    for system in virtualboy virtualboyh; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_vb_libretro.so"
+    addSystem "$system"
 }
