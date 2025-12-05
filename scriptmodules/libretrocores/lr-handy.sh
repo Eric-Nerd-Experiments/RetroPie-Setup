@@ -34,9 +34,10 @@ function install_lr-handy() {
 }
 
 function configure_lr-handy() {
-    mkRomDir "atarilynx"
-    defaultRAConfig "atarilynx"
-
-    addEmulator 1 "$md_id" "atarilynx" "$md_inst/handy_libretro.so"
-    addSystem "atarilynx"
+   	local system
+    for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/handy_libretro.so"
+    addSystem "$system"
 }
