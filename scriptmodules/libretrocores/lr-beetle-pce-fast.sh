@@ -40,9 +40,10 @@ function install_lr-beetle-pce-fast() {
 }
 
 function configure_lr-beetle-pce-fast() {
-    mkRomDir "pcengine"
-    defaultRAConfig "pcengine"
-
-    addEmulator 1 "$md_id" "pcengine" "$md_inst/mednafen_pce_fast_libretro.so"
-    addSystem "pcengine"
+    local system
+    for system in pce-cd pcengine pcengine-t supergrafx tg16 tg16-proto tg16-unl tg-cd; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_pce_fast_libretro.so"
+    addSystem "$system"
 }
