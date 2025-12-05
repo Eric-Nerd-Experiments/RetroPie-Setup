@@ -42,9 +42,10 @@ function install_lr-yabause() {
 }
 
 function configure_lr-yabause() {
-    mkRomDir "saturn"
-    defaultRAConfig "saturn"
-
-    addEmulator 1 "$md_id" "saturn" "$md_inst/yabause_libretro.so"
-    addSystem "saturn"
+   local system
+    for system in saturn saturn-japan; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/yabause_libretro.so"
+    addSystem "$system"
 }
