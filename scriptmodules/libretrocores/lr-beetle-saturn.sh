@@ -34,9 +34,10 @@ function install_lr-beetle-saturn() {
 }
 
 function configure_lr-beetle-saturn() {
-    mkRomDir "saturn"
-    defaultRAConfig "saturn"
-
-    addEmulator 1 "$md_id" "saturn" "$md_inst/mednafen_saturn_libretro.so"
-    addSystem "saturn"
+   local system
+   for system in saturn saturn-japan; do
+   mkRomDir "$system"
+   defaultRAConfig "$system"
+   addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_saturn_libretro.so"
+   addSystem "$system"
 }
