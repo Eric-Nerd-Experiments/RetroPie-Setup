@@ -37,9 +37,10 @@ function install_lr-opera() {
 }
 
 function configure_lr-opera() {
-    mkRomDir "3do"
-    defaultRAConfig "3do"
-
-    addEmulator 1 "$md_id" "3do" "$md_inst/opera_libretro.so"
-    addSystem "3do"
+   local system
+    for system in 3do 3do-japan 3do-arcade; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/opera_libretro.so"
+    addSystem "$system"
 }
