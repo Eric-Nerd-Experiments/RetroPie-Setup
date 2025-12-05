@@ -38,9 +38,10 @@ function install_lr-desmume2015() {
 }
 
 function configure_lr-desmume2015() {
-    mkRomDir "nds"
-    defaultRAConfig "nds"
-
-    addEmulator 0 "$md_id" "nds" "$md_inst/desmume2015_libretro.so"
-    addSystem "nds"
+   local system
+    for system in nds nds-japan ndsh nds-unl; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/desmume2015_libretro.so"
+    addSystem "$system"
 }
