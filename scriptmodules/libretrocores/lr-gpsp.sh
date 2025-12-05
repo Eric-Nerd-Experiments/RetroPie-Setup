@@ -41,11 +41,10 @@ function install_lr-gpsp() {
 }
 
 function configure_lr-gpsp() {
-    mkRomDir "gba"
-    defaultRAConfig "gba"
-
-    local def=0
-    isPlatform "armv6" && def=1
-    addEmulator $def "$md_id" "gba" "$md_inst/gpsp_libretro.so"
-    addSystem "gba"
+    local system
+    for system in gba gbah gba-japan gba-japan-t gba-proto gba-unl gba-ereader; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 0 "$md_id" "$system" "$md_inst/gpsp_libretro.so"
+    addSystem "$system"
 }
