@@ -34,8 +34,21 @@ function install_lr-beetle-lynx() {
 
 function configure_lr-beetle-lynx() {
     mkRomDir "atarilynx"
-    defaultRAConfig "atarilynx"
+mkRomDir "atarilynxh"
+mkRomDir "atarilynx-proto"
+mkRomDir "atarilynx-unl"
+defaultRAConfig "atarilynx"
+defaultRAConfig "atarilynxh"
+defaultRAConfig "atarilynx-proto"
+defaultRAConfig "atarilynx-unl"
 
-    addEmulator 0 "$md_id" "atarilynx" "$md_inst/mednafen_lynx_libretro.so"
-    addSystem "atarilynx"
+addEmulator 0 "$md_id" "atarilynx" "$md_inst/mednafen_lynx_libretro.so"
+addEmulator 0 "$md_id" "atarilynxh" "$md_inst/mednafen_lynx_libretro.so"
+addEmulator 0 "$md_id" "atarilynx-proto" "$md_inst/mednafen_lynx_libretro.so"
+addEmulator 0 "$md_id" "atarilynx-unl" "$md_inst/mednafen_lynx_libretro.so"
+addSystem "atarilynx"
+addSystem "atarilynxh"
+addSystem "atarilynx-proto"
+addSystem "atarilynx-unl"
+
 }
