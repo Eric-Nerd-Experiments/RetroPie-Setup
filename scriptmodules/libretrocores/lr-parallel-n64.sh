@@ -59,7 +59,7 @@ function install_lr-parallel-n64() {
 
 function configure_lr-parallel-n64() {
    local system
-    for system in n64 n64-dd n64-japan n64-japan-t n64-proto n64-unl; do
+    for system in n64 n64dd n64dd-t n64-japan n64-japan-t n64-proto n64-unl; do
     mkRomDir "$system"
     defaultRAConfig "$system"
 
