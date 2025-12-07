@@ -35,7 +35,7 @@ function install_lr-beetle-lynx() {
 function configure_lr-beetle-lynx() {
 
 local system
-for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl; do
+for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl atarilynx-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_lynx_libretro.so"
