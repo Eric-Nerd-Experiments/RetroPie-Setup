@@ -39,7 +39,7 @@ function install_lr-vba-next() {
 
 function configure_lr-vba-next() {
     local system
-    for system in gba gbah gba-japan gba-japan-t gba-proto gba-unl gba-ereader; do
+    for system in gba gbah gba-japan gba-japan-t gba-proto gba-unl gba-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst//vba_next_libretro.so"
