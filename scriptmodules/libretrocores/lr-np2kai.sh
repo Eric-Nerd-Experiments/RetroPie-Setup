@@ -36,7 +36,11 @@ function install_lr-np2kai() {
 function configure_lr-np2kai() {
     mkRomDir "pc98"
     defaultRAConfig "pc98"
+    mkRomDir "pc98-t"
+    defaultRAConfig "pc98-t"
 
     addEmulator 1 "$md_id" "pc98" "$md_inst/np2kai_libretro.so"
     addSystem "pc98"
+    addEmulator 1 "$md_id" "pc98-t" "$md_inst/np2kai_libretro.so"
+    addSystem "pc98-t"
 }
