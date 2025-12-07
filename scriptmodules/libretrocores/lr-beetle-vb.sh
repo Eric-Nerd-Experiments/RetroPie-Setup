@@ -37,7 +37,7 @@ function install_lr-beetle-vb() {
 
 function configure_lr-beetle-vb() {
   local system
-  for system in virtualboy virtualboyh; do
+  for system in virtualboy virtualboyh virtualboy-japan; do
   mkRomDir "$system"
   defaultRAConfig "$system"
   addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_vb_libretro.so"
