@@ -42,9 +42,17 @@ function configure_lr-beetle-wswan() {
     mkRomDir "wonderswancolor"
     defaultRAConfig "wonderswan"
     defaultRAConfig "wonderswancolor"
+    mkRomDir "wonderswan-t"
+    mkRomDir "wonderswancolor-t"
+    defaultRAConfig "wonderswan-t"
+    defaultRAConfig "wonderswancolor-t"
 
     addEmulator 1 "$md_id" "wonderswan" "$md_inst/mednafen_wswan_libretro.so"
     addEmulator 1 "$md_id" "wonderswancolor" "$md_inst/mednafen_wswan_libretro.so"
+     addEmulator 1 "$md_id" "wonderswan-t" "$md_inst/mednafen_wswan_libretro.so"
+    addEmulator 1 "$md_id" "wonderswancolor-t" "$md_inst/mednafen_wswan_libretro.so"
     addSystem "wonderswan"
     addSystem "wonderswancolor"
+    addSystem "wonderswan-t"
+    addSystem "wonderswancolor-t"
 }
