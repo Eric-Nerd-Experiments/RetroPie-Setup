@@ -35,7 +35,7 @@ function install_lr-handy() {
 
 function configure_lr-handy() {
    	local system
-    for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl; do
+    for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl atarilynx-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/handy_libretro.so"
