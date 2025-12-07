@@ -44,7 +44,7 @@ function install_lr-stella() {
 
 function configure_lr-stella() {
     local system
-    for system in atari2600 atari2600h atari2600-proto atari2600-unl; do
+    for system in atari2600 atari2600h atari2600-proto atari2600-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/stella_libretro.so"
