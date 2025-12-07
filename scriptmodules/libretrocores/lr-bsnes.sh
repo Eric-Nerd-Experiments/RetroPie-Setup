@@ -40,7 +40,7 @@ function install_lr-bsnes() {
 
 function configure_lr-bsnes() {
     local system
-    for system in virtualboy virtualboyh; do
+    for system in satellaview sfc sfc-t snes snesh snesmsu1 snes-proto snes-unl snes-hb sufami; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_vb_libretro.so"
