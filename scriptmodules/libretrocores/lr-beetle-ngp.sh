@@ -39,7 +39,7 @@ function install_lr-beetle-ngp() {
 
 function configure_lr-beetle-ngp() {
     local system
-    for system in ngp ngpc; do
+    for system in ngp ngp-t ngpc-t ngpc; do
         mkRomDir "$system"
         defaultRAConfig "$system"
         addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_ngp_libretro.so"
