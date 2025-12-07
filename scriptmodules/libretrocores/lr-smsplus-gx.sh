@@ -36,7 +36,7 @@ function install_lr-smsplus-gx() {
 
 function configure_lr-smsplus-gx() {
     local system
-    for system in gamegear gamegearh gamegear-japan gamegear-proto gamegear-unl markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem; do
+    for system in gamegear gamegearh gamegear-japan gamegear-japan-t gamegear-proto gamegear-unl gamegear-hb markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem mastersystem-hb sg-1000 sg-1000-t; do
         mkRomDir "$system"
         defaultRAConfig "$system"
         addEmulator 0 "$md_id" "$system" "$md_inst/smsplus_libretro.so"
