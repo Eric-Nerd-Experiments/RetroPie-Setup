@@ -54,7 +54,7 @@ function install_lr-flycast-dev() {
 
 function configure_lr-flycast-dev() {
     local system
-    for system in dreamcast dreamcast-indies dreamcast-japan naomi atomiswave; do
+    for system in dreamcast dreamcast-indies dreamcast-japan-t dreamcast-japan naomi atomiswave; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/flycast_libretro.so"
