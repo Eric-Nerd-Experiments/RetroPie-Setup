@@ -38,15 +38,42 @@ function install_lr-bluemsx() {
 function configure_lr-bluemsx() {
     addEmulator 1 "$md_id" "msx" "$md_inst/bluemsx_libretro.so"
     addSystem "msx"
+    addEmulator 1 "$md_id" "msx2" "$md_inst/bluemsx_libretro.so"
+    addSystem "msx2"
+    addEmulator 1 "$md_id" "msxturbor" "$md_inst/bluemsx_libretro.so"
+    addSystem "msxturbor"
+    addEmulator 1 "$md_id" "msx-t" "$md_inst/bluemsx_libretro.so"
+    addSystem "msx-t"
+    addEmulator 1 "$md_id" "msx2-t" "$md_inst/bluemsx_libretro.so"
+    addSystem "msx2-t"
+    addEmulator 1 "$md_id" "msxturbor" "$md_inst/bluemsx_libretro.so"
+    addSystem "msxturbor-t"
+
 
     addEmulator 1 "$md_id" "coleco" "$md_inst/bluemsx_libretro.so"
     addSystem "coleco"
+    addEmulator 1 "$md_id" "colecoh" "$md_inst/bluemsx_libretro.so"
+    addSystem "colecoh"
+    addEmulator 1 "$md_id" "coleco-proto" "$md_inst/bluemsx_libretro.so"
+    addSystem "coleco-proto"
+    addEmulator 1 "$md_id" "coleco-hb" "$md_inst/bluemsx_libretro.so"
+    addSystem "coleco-hb"
 
     [[ "$md_mode" == "remove" ]] && return
 
     mkRomDir "msx"
     defaultRAConfig "msx"
-
+    mkRomDir "msx2"
+    defaultRAConfig "msx2"
+    mkRomDir "msxturbor"
+    defaultRAConfig "msxturbor"
+    mkRomDir "msx-t"
+    defaultRAConfig "msx-t"
+    mkRomDir "msx2-t"
+    defaultRAConfig "msx2-t"
+    mkRomDir "msxturbor-t"
+    defaultRAConfig "msxturbor-t"
+    
     # force colecovision system
     local core_config="$md_conf_root/coleco/retroarch-core-options.cfg"
     iniConfig " = " '"' "$core_config"
@@ -55,6 +82,12 @@ function configure_lr-bluemsx() {
 
     mkRomDir "coleco"
     defaultRAConfig "coleco" "core_options_path" "$core_config"
+    mkRomDir "colecoh"
+    defaultRAConfig "colecoh" "core_options_path" "$core_config"
+    mkRomDir "coleco-proto"
+    defaultRAConfig "coleco-proto" "core_options_path" "$core_config"
+    mkRomDir "coleco-hb"
+    defaultRAConfig "coleco-hb" "core_options_path" "$core_config"
 
     cp -rv "$md_inst/"{Databases,Machines} "$biosdir/"
     chown -R "$__user":"$__group" "$biosdir/"{Databases,Machines}
