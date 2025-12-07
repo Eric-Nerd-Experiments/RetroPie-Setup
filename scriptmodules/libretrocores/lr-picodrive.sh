@@ -50,7 +50,7 @@ function install_lr-picodrive() {
 function configure_lr-picodrive() {
     local system
     local def
-        for system in sega32x megadrive genesis genesish genesis-proto genesis-unl megacd-japan megadrive-japan megadrive-japan-t segacd gamegear gamegearh gamegear-japan gamegear-proto gamegear-unl markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem sg-1000 multivision; do
+        for system in sega32x megadrive genesis genesish genesis-proto genesis-unl megacd-japan megacd-japan-t megadrive-japan megadrive-japan-t megacd gamegear gamegearh gamegear-japan gamegear-proto gamegear-hb gamegear-unl markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem-hb mastersystem sg-1000 sg-1000-t multivision; do
         def=0
         # default on megadrive / mastersystem only on armv6 for performance
         [[ "$system" =~ megadrive|mastersystem ]] && isPlatform "arm6" && def=1
