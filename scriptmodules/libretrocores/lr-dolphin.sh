@@ -42,7 +42,7 @@ function install_lr-dolphin() {
 
 function configure_lr-dolphin() {
    local system
-    for system in gc gc-japan wii wii-japan; do
+    for system in gc gc-japan gc-japan-t wii-japan-t wii wii-japan; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/dolphin_libretro.so"
