@@ -42,7 +42,7 @@ function install_lr-gpsp() {
 
 function configure_lr-gpsp() {
     local system
-    for system in gba gbah gba-japan gba-japan-t gba-proto gba-unl gba-ereader; do
+    for system in gba gbah gba-japan gba-japan-t gba-proto gba-hb gba-unl gba-ereader; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/gpsp_libretro.so"
