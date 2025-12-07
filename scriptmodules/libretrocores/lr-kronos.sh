@@ -43,7 +43,15 @@ function install_lr-kronos() {
 function configure_lr-kronos() {
     mkRomDir "saturn"
     defaultRAConfig "saturn"
+    mkRomDir "saturn-japan"
+    defaultRAConfig "saturn-japan"
+    mkRomDir "saturn-japan-t"
+    defaultRAConfig "saturn-japan-t"
 
     addEmulator 1 "$md_id" "saturn" "$md_inst/kronos_libretro.so"
     addSystem "saturn"
+    addEmulator 1 "$md_id" "saturn-japan" "$md_inst/kronos_libretro.so"
+    addSystem "saturn-japan"
+    addEmulator 1 "$md_id" "saturn-japan-t" "$md_inst/kronos_libretro.so"
+    addSystem "saturn-japan-t"
 }
