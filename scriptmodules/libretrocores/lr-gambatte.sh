@@ -43,7 +43,7 @@ function configure_lr-gambatte() {
     setRetroArchCoreOption "gambatte_gb_colorization" "custom"
 
     local system
-    for system in gb gbh gb-japan gb-japan-t gb-proto gb-unl gbc gbch gbc-japan gbc-proto gbc-unl; do
+    for system in gb gbh gb-japan gb-japan-t gb-proto gb-unl gb-hb gbc-hb gbc-japan-t gbc gbch gbc-japan gbc-proto gbc-unl; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/gambatte_libretro.so"
