@@ -35,7 +35,7 @@ function install_lr-prosystem() {
 
 function configure_lr-prosystem() {
     local system
-    for system in atari7800 atari7800h atari7800-proto atari7800-unl; do
+    for system in atari7800 atari7800h atari7800-proto atari7800-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/prosystem_libretro.so"
