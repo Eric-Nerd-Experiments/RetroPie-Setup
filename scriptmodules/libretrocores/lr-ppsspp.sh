@@ -48,7 +48,7 @@ function install_lr-ppsspp() {
 
 function configure_lr-ppsspp() {
    local system
-   for system in psp pspminis psp-japan; do
+   for system in psp pspminis psp-japan psp-japan-t; do
    mkRomDir "$system"
    defaultRAConfig "$system"
 
