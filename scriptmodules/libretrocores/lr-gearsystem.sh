@@ -37,7 +37,7 @@ function install_lr-gearsystem() {
 
 function configure_lr-gearsystem() {
     local system
-    for system in gamegear gamegearh gamegear-japan gamegear-japan-t gamegear-hb gamegear-proto gamegear-unl markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem-hb mastersystem sg-1000 multivision; do
+    for system in gamegear gamegearh gamegear-japan gamegear-japan-t gamegear-hb gamegear-proto gamegear-unl markiii markiii-t mastersystemh mastersystem-proto mastersystem-unl mastersystem-hb mastersystem sg-1000 sg-1000-t multivision; do
         mkRomDir "$system"
         defaultRAConfig "$system"
         addEmulator 0 "$md_id" "$system" "$md_inst/gearsystem_libretro.so"
