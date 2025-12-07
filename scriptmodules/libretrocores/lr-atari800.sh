@@ -39,7 +39,7 @@ function configure_lr-atari800() {
     moveConfigFile "$home/.lr-atari800.cfg" "$md_conf_root/atari800/lr-atari800.cfg"
 
 local system
-    for system in atari800 atari5200 atari5200h atari5200-proto atari5200-unl; do
+    for system in atari800 atari5200 atari5200h atari5200-proto atari5200-unl atari5200-hb; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/atari800_libretro.so"
