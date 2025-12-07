@@ -47,6 +47,7 @@ function install_px68k() {
 
 function configure_px68k() {
     mkRomDir "x68000"
+    mkRomDir "x68000-t"
 
     moveConfigDir "$home/.keropi" "$md_conf_root/x68000"
     mkUserDir "$biosdir/keropi"
@@ -61,6 +62,8 @@ function configure_px68k() {
 
     addEmulator 1 "$md_id" "x68000" "$md_inst/px68k.sdl2 %ROM%"
     addSystem "x68000"
+    addEmulator 1 "$md_id" "x68000-t" "$md_inst/px68k.sdl2 %ROM%"
+    addSystem "x68000-t"
 
     [[ "$md_mode"  == "remove" ]] && return
 
