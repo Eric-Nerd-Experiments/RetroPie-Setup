@@ -13,21 +13,21 @@ rp_module_id="giana"
 rp_module_desc="Giana's Return"
 rp_module_licence="NONCOM https://www.gianas-return.de/?page_id=6"
 rp_module_section="opt"
-rp_module_flags="!all videocore"
+rp_module_flags="x86"
 
 function depends_giana() {
-    getDepends libsdl1.2-dev libsdl-mixer1.2-dev libraspberrypi-dev
+    getDepends libsdl1.2-dev libsdl-mixer1.2-dev libmodplug
 }
 
 function install_bin_giana() {
-    downloadAndExtract "http://www.retroguru.com/gianas-return/gianas-return-v.latest-raspberrypi.zip" "$md_inst"
-    patchVendorGraphics "$md_inst/giana_rpi"
+    downloadAndExtract "http://www.retroguru.com/gianas-return/gianas-return-v.latest-linux.tar.gz" "$md_inst"
+    
 }
 
 function configure_giana() {
     moveConfigDir "$home/.giana" "$md_conf_root/giana"
 
-    addPort "$md_id" "giana" "Giana's Return" "pushd $md_inst; $md_inst/giana_rpi; popd"
+    addPort "$md_id" "giana" "Giana's Return" "pushd $md_inst; $md_inst/giana_linux64; popd"
 
-    chmod +x "$md_inst/giana_rpi"
+    chmod +x "$md_inst/giana_linux64"
 }
