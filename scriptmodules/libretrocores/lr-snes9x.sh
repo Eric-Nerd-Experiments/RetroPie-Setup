@@ -40,7 +40,7 @@ function install_lr-snes9x() {
 
 function configure_lr-snes9x() {
    local system
-    for system in satellaview sfc sfc-t snes snesh snesmsu1 snes-proto snes-unl sufami; do
+    for system in satellaview sfc sfc-t snes snesh snesmsu1 snes-proto snes-unl snes-hb sufami; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/snes9x_libretro.so"
