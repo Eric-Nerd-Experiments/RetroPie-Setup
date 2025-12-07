@@ -59,7 +59,15 @@ function install_lr-pcsx-rearmed() {
 function configure_lr-pcsx-rearmed() {
     mkRomDir "psx"
     defaultRAConfig "psx"
+    mkRomDir "psx-japan"
+    defaultRAConfig "psx-japan"
+    mkRomDir "psx-japan-t"
+    defaultRAConfig "psx-japan-t"
 
     addEmulator 1 "$md_id" "psx" "$md_inst/pcsx_rearmed_libretro.so"
     addSystem "psx"
+    addEmulator 1 "$md_id" "psx-japan" "$md_inst/pcsx_rearmed_libretro.so"
+    addSystem "psx-japan"
+    addEmulator 1 "$md_id" "psx-japan-t" "$md_inst/pcsx_rearmed_libretro.so"
+    addSystem "psx-japan-t"
 }
