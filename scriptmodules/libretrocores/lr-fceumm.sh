@@ -39,7 +39,7 @@ function install_lr-fceumm() {
 
 function configure_lr-fceumm() {
     local system
-    for system in dendy famicom nes nesh nesht nes-proto nes-unl fds; do
+    for system in dendy famicom famicom-t nes-hb nes nesh nesht nes-proto nes-unl fds; do
     mkRomDir "$system"
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/fceumm_libretro.so"
