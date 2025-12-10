@@ -40,4 +40,5 @@ function configure_lr-prosystem() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/prosystem_libretro.so"
     addSystem "$system"
+    done
 }
