@@ -47,4 +47,5 @@ function configure_lr-beetle-psx() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/mednafen_psx_hw_libretro.so"
     addSystem "$system"
+    done
 }
