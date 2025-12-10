@@ -47,4 +47,5 @@ function configure_lr-gpsp() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/gpsp_libretro.so"
     addSystem "$system"
+    done
 }
