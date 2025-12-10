@@ -40,4 +40,5 @@ function configure_lr-beetle-saturn() {
    defaultRAConfig "$system"
    addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_saturn_libretro.so"
    addSystem "$system"
+   done
 }
