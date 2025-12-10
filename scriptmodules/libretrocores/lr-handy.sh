@@ -40,4 +40,5 @@ function configure_lr-handy() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/handy_libretro.so"
     addSystem "$system"
+    done
 }
