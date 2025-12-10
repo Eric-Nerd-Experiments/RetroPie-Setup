@@ -44,5 +44,5 @@ local system
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/atari800_libretro.so"
     addSystem "$system"
-    
+    done
 }
