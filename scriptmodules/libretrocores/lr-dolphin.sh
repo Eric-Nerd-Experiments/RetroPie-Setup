@@ -47,4 +47,5 @@ function configure_lr-dolphin() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/dolphin_libretro.so"
     addSystem "$system"
+    done
 }
