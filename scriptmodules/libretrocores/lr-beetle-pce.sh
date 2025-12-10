@@ -42,6 +42,7 @@ function configure_lr-beetle-pce() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_pce_libretro.so"
     addSystem "$system"
+    done
     [[ "$md_mode" == "remove" ]] && return
 
     # Set core options
