@@ -44,4 +44,5 @@ function configure_lr-vba-next() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst//vba_next_libretro.so"
     addSystem "$system"
+    done
 }
