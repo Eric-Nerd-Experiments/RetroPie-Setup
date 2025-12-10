@@ -44,4 +44,5 @@ function configure_lr-fceumm() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/fceumm_libretro.so"
     addSystem "$system"
+    done
 }
