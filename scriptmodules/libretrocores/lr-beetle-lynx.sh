@@ -40,5 +40,5 @@ for system in atarilynx atarilynxh atarilynx-proto atarilynx-unl atarilynx-hb; d
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_lynx_libretro.so"
     addSystem "$system"
-
+    done
 }
