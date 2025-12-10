@@ -49,4 +49,5 @@ function configure_lr-stella() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/stella_libretro.so"
     addSystem "$system"
+    done
 }
