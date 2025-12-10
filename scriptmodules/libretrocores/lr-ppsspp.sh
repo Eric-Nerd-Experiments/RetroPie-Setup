@@ -51,6 +51,9 @@ function configure_lr-ppsspp() {
    for system in psp pspminis psp-japan psp-japan-t; do
    mkRomDir "$system"
    defaultRAConfig "$system"
+   addEmulator 1 "$md_id" "$system" "$md_inst/ppsspp_libretro.so"
+   addSystem "$system"
+   done
 
     if [[ "$md_mode" == "install" ]]; then
         mkUserDir "$biosdir/PPSSPP"
@@ -63,8 +66,7 @@ function configure_lr-ppsspp() {
         moveConfigDir "$home/.config/ppsspp" "$md_conf_root/psp"
     fi
 
-    addEmulator 1 "$md_id" "$system" "$md_inst/ppsspp_libretro.so"
-    addSystem "$system"
+    
 
     # if we are removing the last remaining psp emu - remove the symlink
     if [[ "$md_mode" == "remove" ]]; then
