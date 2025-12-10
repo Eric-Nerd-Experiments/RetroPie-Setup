@@ -87,4 +87,5 @@ function configure_lr-mupen64plus-next() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mupen64plus_next_libretro.so"
     addSystem "$system"
+    done
 }
