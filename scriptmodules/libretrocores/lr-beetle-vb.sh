@@ -42,4 +42,5 @@ function configure_lr-beetle-vb() {
   defaultRAConfig "$system"
   addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_vb_libretro.so"
   addSystem "$system"
+  done
 }
