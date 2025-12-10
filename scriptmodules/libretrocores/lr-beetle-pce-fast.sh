@@ -46,4 +46,5 @@ function configure_lr-beetle-pce-fast() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/mednafen_pce_fast_libretro.so"
     addSystem "$system"
+    done
 }
