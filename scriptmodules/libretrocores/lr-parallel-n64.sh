@@ -61,7 +61,10 @@ function configure_lr-parallel-n64() {
    local system
     for system in n64 n64dd n64dd-t n64-japan n64-japan-t n64-proto n64-unl; do
     mkRomDir "$system"
-    defaultRAConfig "$system"
+    defaultRAConfig "$saddEmulator 0 "$md_id" "$system" "$md_inst/parallel_n64_libretro.so"
+    addSystem "$system"ystem"
+    done
+      
 
     # Set core options
     setRetroArchCoreOption "parallel-n64-gfxplugin" "auto"
@@ -173,6 +176,4 @@ target FPS=25
 _EOF_
     chown "$__user":"$__group" "$biosdir/gles2n64rom.conf"
 
-    addEmulator 0 "$md_id" "$system" "$md_inst/parallel_n64_libretro.so"
-    addSystem "$system"
-}
+    }
