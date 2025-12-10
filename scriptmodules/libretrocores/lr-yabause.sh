@@ -48,4 +48,5 @@ function configure_lr-yabause() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/yabause_libretro.so"
     addSystem "$system"
+    done
 }
