@@ -44,4 +44,5 @@ function configure_lr-desmume2015() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/desmume2015_libretro.so"
     addSystem "$system"
+    done
 }
