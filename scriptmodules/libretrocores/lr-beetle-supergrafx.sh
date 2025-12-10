@@ -40,4 +40,5 @@ function configure_lr-beetle-supergrafx() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/mednafen_supergrafx_libretro.so"
     addSystem "$system"
+    done
 }
