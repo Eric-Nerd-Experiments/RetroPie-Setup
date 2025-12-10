@@ -43,4 +43,5 @@ function configure_lr-nestopia() {
   defaultRAConfig "$system"
   addEmulator 1 "$md_id" "$system" "$md_inst/nestopia_libretro.so"
   addSystem "$system"
+  done
 }
