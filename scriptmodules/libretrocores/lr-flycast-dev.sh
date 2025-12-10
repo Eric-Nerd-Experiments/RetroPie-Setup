@@ -59,5 +59,6 @@ function configure_lr-flycast-dev() {
     defaultRAConfig "$system"
     addEmulator 0 "$md_id" "$system" "$md_inst/flycast_libretro.so"
     addSystem "$system"
+    done
     mkUserDir "$biosdir/dc"
 }
