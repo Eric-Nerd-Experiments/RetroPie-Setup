@@ -70,4 +70,5 @@ function configure_lr-pcsx-rearmed() {
     addSystem "psx-japan"
     addEmulator 1 "$md_id" "psx-japan-t" "$md_inst/pcsx_rearmed_libretro.so"
     addSystem "psx-japan-t"
+    done
 }
