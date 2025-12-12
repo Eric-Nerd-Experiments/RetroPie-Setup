@@ -16,61 +16,13 @@ rp_module_licence="GPL2 https://raw.githubusercontent.com/FrodeSolheim/fs-uae/ma
 rp_module_section="exp"
 rp_module_flags="!all !arm x11"
 
-function depends_fs-uae() {
-    local apt_file="/etc/apt/sources.list.d/fsuae-stable.list"
-    local key_file="/etc/apt/trusted.gpg.d/home_FrodeSolheim_stable.gpg"
-
-    if [[ "$md_mode" == "remove" ]]; then
-        rm -f "$apt_file"
-        # remove old keys
-        gpg --keyring /etc/apt/trusted.gpg --batch --yes --delete-keys "home:FrodeSolheim@build.opensuse.org" &>/dev/null$
-        rm -f "$key_file"
-        return
-    fi
-
-    [[ "$md_mode" != "install*" ]] && return
-    # handle installation for Debian or Ubuntu
-    case "$__os_id" in
-        Debian)
-            case "$__os_debian_ver" in
-                11|12)
-                    name="Debian_${__os_debian_ver}"
-                    ;;
-                 *)
-                    md_ret_errors+=("Sorry, fs-uae isn't currently available for Debian $__os_debian_ver")
-                    return 1
-                    ;;
-            esac
-            ;;
-        Ubuntu)
-            case "$__os_ubuntu_ver" in
-                20.04|22.04|24.04|24.10|25.04)
-                    name="xUbuntu_${__os_ubuntu_ver}"
-                    ;;
-                *)
-                     md_ret_errors+=("Sorry, fs-uae isn't currently available for Ubuntu $__os_ubuntu_ver")
-                     return 1
-                     ;;
-            esac
-            ;;
-        *)
-            md_ret_errors+=("Sorry, fs-uae isn't currently available for your system")
-            return 1
-            ;;
-    esac
-
-    # configure the APT repo and key
-    local repo="http://download.opensuse.org/repositories/home:/FrodeSolheim:/stable/$name"
-    echo "deb $repo/ /" > "$apt_file"
-    download "$repo/Release.key" - | gpg --dearmor | tee "$key_file" >/dev/null
-}
-
+  
 function install_bin_fs-uae() {
-    aptInstall fs-uae fs-uae-launcher fs-uae-arcade
+    aptInstall fs-uae fs-uae-arcade
 }
 
 function remove_fs-uae() {
-    aptRemove fs-uae fs-uae-launcher fs-uae-arcade
+    aptRemove fs-uae fs-uae-arcade
 }
 
 function configure_fs-uae() {
