@@ -23,12 +23,12 @@ function sources_lr-freeintv() {
 function build_lr-freeintv() {
     make clean
     make
-    md_ret_require="$md_build/Freeintv_libretro.so"
+    md_ret_require="$md_build/FreeIntv_libretro.so"
 }
 
 function install_lr-freeintv() {
     md_ret_files=(
-        'Freeintv_libretro.so'
+        'FreeIntv_libretro.so'
         'LICENSE'
         'README.md'
     )
@@ -38,6 +38,6 @@ function configure_lr-freeintv() {
     mkRomDir "intellivision"
     defaultRAConfig "intellivision"
 
-    addEmulator 1 "$md_id" "intellivision" "$md_inst/Freeintv_libretro.so"
+    addEmulator 1 "$md_id" "intellivision" "$md_inst/FreeIntv_libretro.so"
     addSystem "intellivision"
 }
