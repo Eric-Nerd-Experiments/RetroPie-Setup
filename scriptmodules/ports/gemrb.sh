@@ -12,12 +12,12 @@
 rp_module_id="gemrb"
 rp_module_desc="gemrb - open-source implementation of Infinity Engine"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/gemrb/gemrb/master/COPYING"
-rp_module_repo="git https://github.com/gemrb/gemrb.git v0.8.6"
+rp_module_repo="git https://github.com/gemrb/gemrb.git"
 rp_module_section="exp"
 rp_module_flags="!mali dispmanx"
 
 function depends_gemrb() {
-    getDepends python2-dev libopenal-dev cmake libpng-dev libfreetype6-dev libsdl2-dev libvorbis-dev libvlc-dev libvlccore-dev
+    getDepends python3-dev libopenal-dev cmake libpng-dev libfreetype6-dev libsdl2-dev libvorbis-dev libvlc-dev libvlccore-dev
 }
 
 function sources_gemrb() {
