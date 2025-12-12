@@ -16,7 +16,7 @@ rp_module_section="opt"
 rp_module_flags="x86"
 
 function depends_giana() {
-    getDepends libsdl1.2-dev libsdl-mixer1.2-dev libmodplug
+    getDepends libsdl1.2-dev libsdl-mixer1.2-dev libmodplug-dev
 }
 
 function install_bin_giana() {
