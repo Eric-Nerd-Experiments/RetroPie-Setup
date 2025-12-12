@@ -23,12 +23,12 @@ function sources_lr-freeintv() {
 function build_lr-freeintv() {
     make clean
     make
-    md_ret_require="$md_build/freeintv_libretro.so"
+    md_ret_require="$md_build/Freeintv_libretro.so"
 }
 
 function install_lr-freeintv() {
     md_ret_files=(
-        'freeintv_libretro.so'
+        'Freeintv_libretro.so'
         'LICENSE'
         'README.md'
     )
