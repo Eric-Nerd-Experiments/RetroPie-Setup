@@ -38,6 +38,6 @@ function configure_lr-freeintv() {
     mkRomDir "intellivision"
     defaultRAConfig "intellivision"
 
-    addEmulator 1 "$md_id" "intellivision" "$md_inst/freeintv_libretro.so"
+    addEmulator 1 "$md_id" "intellivision" "$md_inst/Freeintv_libretro.so"
     addSystem "intellivision"
 }
