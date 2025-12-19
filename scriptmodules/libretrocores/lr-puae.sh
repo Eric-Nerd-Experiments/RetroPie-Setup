@@ -33,8 +33,11 @@ function install_lr-puae() {
 }
 
 function configure_lr-puae() {
-    mkRomDir "amiga"
-    defaultRAConfig "amiga"
-    addEmulator 1 "$md_id" "amiga" "$md_inst/puae_libretro.so"
-    addSystem "amiga"
+    local system
+    for system in amiga amiga1200 amigacdtv amigacd32; do
+    mkRomDir "$system"
+    defaultRAConfig "$system"
+    addEmulator 1 "$md_id" "$system" "$md_inst/puae_libretro"
+    addSystem "$system"
+    doneiuk
 }
