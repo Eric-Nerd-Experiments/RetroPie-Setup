@@ -27,9 +27,18 @@ function remove_fs-uae() {
 
 function configure_fs-uae() {
     mkRomDir "amiga"
+	mkRomDir "amiga1200"
+	mkRomDir "amigacdtv"
+	mkRomDir "amigacd32"
 
     addEmulator 1 "$md_id" "amiga" "CON:bash $md_inst/bin/fs-uae.sh %ROM%"
     addSystem "amiga"
+	addEmulator 1 "$md_id" "amiga1200" "CON:bash $md_inst/bin/fs-uae.sh %ROM%"
+    addSystem "amiga1200"
+	addEmulator 1 "$md_id" "amigacd32" "CON:bash $md_inst/bin/fs-uae.sh %ROM%"
+    addSystem "amigacd32"
+	addEmulator 1 "$md_id" "amigacdtv" "CON:bash $md_inst/bin/fs-uae.sh %ROM%"
+    addSystem "amigacdtv"
 
     [[ "$md_mode" == "remove" ]] && return
 
