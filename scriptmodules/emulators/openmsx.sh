@@ -58,12 +58,18 @@ function install_openmsx() {
 
 function configure_openmsx() {
     mkRomDir "msx"
+	mkRomDir "msx2"
+	mkRomDir "msx2p"
+	mkRomDir "msxtr"
 
     addEmulator 0 "$md_id" "msx" "$md_inst/bin/openmsx %ROM%"
-    addEmulator 0 "$md_id-msx2" "msx" "$md_inst/bin/openmsx -machine 'Boosted_MSX2_EN' %ROM%"
-    addEmulator 0 "$md_id-msx2-plus" "msx" "$md_inst/bin/openmsx -machine 'Boosted_MSX2+_JP' %ROM%"
-    addEmulator 0 "$md_id-msx-turbor" "msx" "$md_inst/bin/openmsx -machine 'Panasonic_FS-A1GT' %ROM%"
+    addEmulator 0 "$md_id-msx2" "msx2" "$md_inst/bin/openmsx -machine 'Boosted_MSX2_EN' %ROM%"
+    addEmulator 0 "$md_id-msx2-plus" "msx2p" "$md_inst/bin/openmsx -machine 'Boosted_MSX2+_JP' %ROM%"
+    addEmulator 0 "$md_id-msx-turbor" "msxtr" "$md_inst/bin/openmsx -machine 'Panasonic_FS-A1GT' %ROM%"
     addSystem "msx"
+	addSystem "msx2"
+	addSystem "msx2p"
+	addSystem "msxtr"
 
     [[ $md_mode == "remove" ]] && return
 

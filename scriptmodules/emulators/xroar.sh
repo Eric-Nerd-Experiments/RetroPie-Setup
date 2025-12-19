@@ -59,7 +59,7 @@ function configure_xroar() {
     addEmulator 1 "$md_id-dragon32" "dragon32" "$md_inst/bin/xroar ${params[*]} -machine dragon32 -run %ROM%"
     addEmulator 1 "$md_id-cocous" "coco" "$md_inst/bin/xroar ${params[*]} -machine cocous -run %ROM%"
     addEmulator 0 "$md_id-coco" "coco" "$md_inst/bin/xroar ${params[*]} -machine coco -run %ROM%"
-    addEmulator 0 "$md_id-coco3us" "coco3" "$md_inst/bin/xroar ${params[*]} -machine coco3 -run %ROM%"
+    addEmulator 1 "$md_id-coco3us" "coco3" "$md_inst/bin/xroar ${params[*]} -machine coco3 -run %ROM%"
     addEmulator 0 "$md_id-coco3" "coco3" "$md_inst/bin/xroar ${params[*]} -machine coco3p -run %ROM%"
 
     addSystem "dragon32"

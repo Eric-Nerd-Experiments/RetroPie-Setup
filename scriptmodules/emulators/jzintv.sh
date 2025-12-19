@@ -62,6 +62,9 @@ function install_jzintv() {
 
 function configure_jzintv() {
     mkRomDir "intellivision"
+	mkRomDir "intellivisionh"
+	mkRomDir "intellivision-proto"
+	mkRomDir "intellivision-hb"
 
     local options=(
         --displaysize="%XRES%x%YRES%"
@@ -73,5 +76,17 @@ function configure_jzintv() {
     addEmulator 1 "$md_id" "intellivision" "$md_inst/bin/jzintv ${options[*]} %ROM%"
     options+=(--ecs=1)
     addEmulator 0 "${md_id}-ecs" "intellivision" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    addSystem "intellivision"
+	addEmulator 1 "$md_id" "intellivisionh" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    options+=(--ecs=1)
+    addEmulator 0 "${md_id}-ecs" "intellivisionh" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    addSystem "intellivision"
+	addEmulator 1 "$md_id" "intellivision-proto" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    options+=(--ecs=1)
+    addEmulator 0 "${md_id}-ecs" "intellivision-proto" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    addSystem "intellivision"
+	addEmulator 1 "$md_id" "intellivision-hb" "$md_inst/bin/jzintv ${options[*]} %ROM%"
+    options+=(--ecs=1)
+    addEmulator 0 "${md_id}-ecs" "intellivision-hb" "$md_inst/bin/jzintv ${options[*]} %ROM%"
     addSystem "intellivision"
 }

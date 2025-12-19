@@ -72,16 +72,24 @@ _EOF_
     chmod +x "$md_inst/bin/vice.sh"
 
     mkRomDir "c64"
+	mkRomDir "c128"
+	mkRomDir "vic20"
+	mkRomDir "plus4"
+	mkRomDir "pet"
 
     addEmulator 1 "$md_id-x64" "c64" "$md_inst/bin/vice.sh x64 %ROM%"
     addEmulator 0 "$md_id-x64dtv" "c64" "$md_inst/bin/vice.sh x64dtv %ROM%"
     addEmulator 0 "$md_id-x64sc" "c64" "$md_inst/bin/vice.sh x64sc %ROM%"
-    addEmulator 0 "$md_id-x128" "c64" "$md_inst/bin/vice.sh x128 %ROM%"
-    addEmulator 0 "$md_id-xpet" "c64" "$md_inst/bin/vice.sh xpet %ROM%"
-    addEmulator 0 "$md_id-xplus4" "c64" "$md_inst/bin/vice.sh xplus4 %ROM%"
-    addEmulator 0 "$md_id-xvic" "c64" "$md_inst/bin/vice.sh xvic %ROM%"
-    addEmulator 0 "$md_id-xvic-cart" "c64" "$md_inst/bin/vice.sh xvic %ROM% -cartgeneric"
-    addSystem "c64"
+    addEmulator 1 "$md_id-x128" "c128" "$md_inst/bin/vice.sh x128 %ROM%"
+    addEmulator 1 "$md_id-xpet" "pet" "$md_inst/bin/vice.sh xpet %ROM%"
+    addEmulator 1 "$md_id-xplus4" "plus4" "$md_inst/bin/vice.sh xplus4 %ROM%"
+    addEmulator 1 "$md_id-xvic" "vic20" "$md_inst/bin/vice.sh xvic %ROM%"
+    addEmulator 0 "$md_id-xvic-cart" "vic20" "$md_inst/bin/vice.sh xvic %ROM% -cartgeneric"
+    addSystem "c128"
+	addSystem "vic20"
+	addSystem "pet"
+	addSystem "c64"
+	addSystem "plus4"
 
     [[ "$md_mode" == "remove" ]] && return
 

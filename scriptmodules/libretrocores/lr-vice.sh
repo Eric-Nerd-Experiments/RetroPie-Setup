@@ -50,21 +50,28 @@ function install_lr-vice() {
 function configure_lr-vice() {
     mkRomDir "c64"
     defaultRAConfig "c64"
+	mkRomDir "c128"
+    defaultRAConfig "c128"
+	mkRomDir "pet"
+    defaultRAConfig "pet"
+	mkRomDir "vic20"
+    defaultRAConfig "vic20"
+	mkRomDir "plus4"
+    defaultRAConfig "plus4"
 
-    local target
-    local name
-    local def
-    for target in $(_get_targets_lr-vice); do
-        def=0
-        name="-${target}"
-        if [[ "$target" == "x64" ]]; then
-            name=""
-            def=1
-        fi
-        addEmulator "$def" "$md_id${name}" "c64" "$md_inst/vice_${target}_libretro.so"
-    done
+    
+        addEmulator "1" "$md_id" "c64" "$md_inst/vice_x64_libretro.so"
+		addEmulator "1" "$md_id" "c128" "$md_inst/vice_x128_libretro.so"
+		addEmulator "$def" "$md_id" "vic20" "$md_inst/vice_xvic_libretro.so"
+		addEmulator "$def" "$md_id" "pet" "$md_inst/vice_xpet_libretro.so"
+		addEmulator "$def" "$md_id" "plus4" "$md_inst/vice_xplus4_libretro.so"
+    
     
     addSystem "c64"
+	addSystem "c128"
+	addSystem "vic20"
+	addSystem "pet"
+	addSystem "plus4"
 
     [[ "$md_mode" == "remove" ]] && return
 

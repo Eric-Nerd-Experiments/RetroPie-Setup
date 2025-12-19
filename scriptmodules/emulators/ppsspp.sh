@@ -194,14 +194,29 @@ function configure_ppsspp() {
     fi
 
     mkRomDir "psp"
+	mkRomDir "pspminis"
+	mkRomDir "psp-japan"
+	mkRomDir "psp-japan-t"
     if [[ "$md_mode" == "install" ]]; then
         moveConfigDir "$home/.config/ppsspp" "$md_conf_root/psp"
         mkUserDir "$md_conf_root/psp/PSP"
+		mkUserDir "$md_conf_root/psp/PSPMINIS"
+		mkUserDir "$md_conf_root/psp/PSP-JAPAN"
+		mkUserDir "$md_conf_root/psp/PSP-JAPAN-T"
         ln -snf "$romdir/psp" "$md_conf_root/psp/PSP/GAME"
+		ln -snf "$romdir/pspminis" "$md_conf_root/psp/PSPMINIS/GAME"
+		ln -snf "$romdir/psp-japan" "$md_conf_root/psp/PSP-JAPAN/GAME"
+		ln -snf "$romdir/psp-japan-t" "$md_conf_root/psp/PSP-JAPAN-T/GAME"
     fi
 
     addEmulator 0 "$md_id" "psp" "pushd $md_inst; $md_inst/PPSSPPSDL ${extra_params[*]} %ROM%; popd"
     addSystem "psp"
+	addEmulator 0 "$md_id" "pspminis" "pushd $md_inst; $md_inst/PPSSPPSDL ${extra_params[*]} %ROM%; popd"
+    addSystem "pspminis"
+	addEmulator 0 "$md_id" "psp-japan" "pushd $md_inst; $md_inst/PPSSPPSDL ${extra_params[*]} %ROM%; popd"
+    addSystem "psp-japan"
+	addEmulator 0 "$md_id" "psp-japan-t" "pushd $md_inst; $md_inst/PPSSPPSDL ${extra_params[*]} %ROM%; popd"
+    addSystem "psp-japan-t"
 
     # if we are removing the last remaining psp emu - remove the symlink
     if [[ "$md_mode" == "remove" ]]; then

@@ -47,9 +47,18 @@ function install_stella() {
 
 function configure_stella() {
     mkRomDir "atari2600"
+	mkRomDir "atari2600h"
+	mkRomDir "atari2600-proto"
+	mkRomDir "atari2600-hb"
 
     moveConfigDir "$home/.config/stella" "$md_conf_root/atari2600/stella"
 
     addEmulator 1 "$md_id" "atari2600" "$md_inst/bin/stella -maxres 320x240 -fullscreen 1 -tia.fsfill 1 %ROM%"
     addSystem "atari2600"
+	addEmulator 1 "$md_id" "atari2600h" "$md_inst/bin/stella -maxres 320x240 -fullscreen 1 -tia.fsfill 1 %ROM%"
+    addSystem "atari2600h"
+	addEmulator 1 "$md_id" "atari2600-proto" "$md_inst/bin/stella -maxres 320x240 -fullscreen 1 -tia.fsfill 1 %ROM%"
+    addSystem "atari2600-proto"
+	addEmulator 1 "$md_id" "atari2600-hb" "$md_inst/bin/stella -maxres 320x240 -fullscreen 1 -tia.fsfill 1 %ROM%"
+    addSystem "atari2600-hb"
 }

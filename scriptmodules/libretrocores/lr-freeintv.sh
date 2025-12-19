@@ -37,7 +37,19 @@ function install_lr-freeintv() {
 function configure_lr-freeintv() {
     mkRomDir "intellivision"
     defaultRAConfig "intellivision"
+	mkRomDir "intellivisionh"
+    defaultRAConfig "intellivisionh"
+	mkRomDir "intellivision-proto"
+    defaultRAConfig "intellivision-proto"
+	mkRomDir "intellivision-hb"
+    defaultRAConfig "intellivision-hb"
 
     addEmulator 1 "$md_id" "intellivision" "$md_inst/FreeIntv_libretro.so"
     addSystem "intellivision"
+	addEmulator 1 "$md_id" "intellivisionh" "$md_inst/FreeIntv_libretro.so"
+    addSystem "intellivisionh"
+	addEmulator 1 "$md_id" "intellivision-proto" "$md_inst/FreeIntv_libretro.so"
+    addSystem "intellivision-proto"
+	addEmulator 1 "$md_id" "intellivision-hb" "$md_inst/FreeIntv_libretro.so"
+    addSystem "intellivision-hb"
 }
