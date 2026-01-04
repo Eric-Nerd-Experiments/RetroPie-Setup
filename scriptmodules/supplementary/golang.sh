@@ -44,4 +44,4 @@ function install_bin_golang() {
     printMsgs "console" "Downloading go$target_version.linux-$arch.tar.gz"
     downloadAndExtract "https://go.dev/dl/go${target_version}.linux-$arch.tar.gz" "$md_inst" --strip-components 1 --exclude="go/test"
 }
-}
+

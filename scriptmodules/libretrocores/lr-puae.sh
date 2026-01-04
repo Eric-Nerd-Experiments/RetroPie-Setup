@@ -39,5 +39,5 @@ function configure_lr-puae() {
     defaultRAConfig "$system"
     addEmulator 1 "$md_id" "$system" "$md_inst/puae_libretro"
     addSystem "$system"
-    doneiuk
+    done
 }
