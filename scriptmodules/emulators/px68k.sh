@@ -25,7 +25,7 @@ function depends_px68k() {
 
 function sources_px68k() {
     gitPullOrClone
-    applyPatch "$md_data/001-missing-typedef.diff"
+   
 }
 
 function build_px68k() {
