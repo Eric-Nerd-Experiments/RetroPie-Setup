@@ -17,7 +17,7 @@ rp_module_repo="git https://github.com/lowlevel-1989/dbar4gun master"
 rp_module_section="driver"
 
 function depends_dbar4gun() {
-    getDepends python3 python3-dev python3-setuptools python3-virtualenv python3-pygame
+    getDepends python3 python3-dev python3-setuptools python3-virtualenv python3-pygame python3.12-venv
 }
 
 function sources_dbar4gun() {
